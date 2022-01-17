@@ -7,8 +7,6 @@ Created on Thu Jan 13 20:29:35 2022
 
 import streamlit as st
 import pandas as pd 
-from pycaret.classification import load_model
-import shap
 import streamlit.components.v1 as components
 from sklearn.pipeline import Pipeline
 import plotly.graph_objects as go
