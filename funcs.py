@@ -24,23 +24,6 @@ def get_index_from_SK_ID(df,sk_id) :
     index_user = loc_id.index.values[0]
     return index_user
 
-@st.cache(hash_funcs={XGBClassifier: id},allow_output_mutation=True)
-def import_model():
-    model_complete = load_model("final_model_v2")
-    model = load_model("final_model_v2").steps[-1][1]
-    pipeline = load_model("final_model_v2").steps[:-1]
-    return model,pipeline, model_complete
-
-@st.cache(hash_funcs={XGBClassifier: id},allow_output_mutation=True)
-def pipeline_transform(pipeline,df) : 
-    
-    pipe = Pipeline(pipeline)
-    
-    X = pipe.fit_transform(df)
-    X['SK_ID_CURR'] = df['SK_ID_CURR']
-    
-    return X
-
 @st.cache
 def plot_score(score=0.5):
     ot_value =  0.25470000000000004
