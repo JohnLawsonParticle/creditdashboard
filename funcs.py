@@ -7,7 +7,6 @@ Created on Thu Jan 13 20:29:35 2022
 
 import streamlit as st
 import pandas as pd 
-from xgboost import XGBClassifier
 from pycaret.classification import load_model
 import shap
 import streamlit.components.v1 as components
